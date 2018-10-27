@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>节点启动 | 主神链技术文档</title>
+    <meta name="description" content="所有主神联盟链中的公司, 会共同开发区块链底层功能, 每个公司专注在自己擅长或感兴趣的领域, 并开放接口及SDK给主神联盟链中的所有成员共同使用。">
+    <link rel="icon" href="/logo.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.1387b97d.css" as="style"><link rel="preload" href="/assets/js/app.295daaac.js" as="script"><link rel="preload" href="/assets/js/17.2490e2d2.js" as="script"><link rel="prefetch" href="/assets/js/10.15f96993.js"><link rel="prefetch" href="/assets/js/2.9a15e329.js"><link rel="prefetch" href="/assets/js/3.0ed1ab3f.js"><link rel="prefetch" href="/assets/js/4.d661e659.js"><link rel="prefetch" href="/assets/js/5.47999b73.js"><link rel="prefetch" href="/assets/js/6.732a0f33.js"><link rel="prefetch" href="/assets/js/7.067f464e.js"><link rel="prefetch" href="/assets/js/8.003e6c66.js"><link rel="prefetch" href="/assets/js/9.fe62e218.js"><link rel="prefetch" href="/assets/js/11.6d59fc31.js"><link rel="prefetch" href="/assets/js/12.f1319fd2.js"><link rel="prefetch" href="/assets/js/13.a651f5df.js"><link rel="prefetch" href="/assets/js/14.d4352c4d.js"><link rel="prefetch" href="/assets/js/15.ea1ac61f.js"><link rel="prefetch" href="/assets/js/16.abd660b2.js"><link rel="prefetch" href="/assets/js/18.b7abab66.js"><link rel="prefetch" href="/assets/js/19.39481309.js"><link rel="prefetch" href="/assets/js/20.2b9f8a7d.js"><link rel="prefetch" href="/assets/js/21.128b6972.js"><link rel="prefetch" href="/assets/js/22.176ebccb.js"><link rel="prefetch" href="/assets/js/23.eafc5edc.js"><link rel="prefetch" href="/assets/js/24.a77288cc.js"><link rel="prefetch" href="/assets/js/25.0bfa46e4.js"><link rel="prefetch" href="/assets/js/26.e4fce782.js"><link rel="prefetch" href="/assets/js/27.da527dcf.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1387b97d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">主神链技术文档</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/general/" class="nav-link">入门</a></div><div class="nav-item"><a href="/js-api/" class="nav-link">JS API</a></div><div class="nav-item"><a href="/ios-api/" class="nav-link">iOS API</a></div><div class="nav-item"><a href="/android-api/" class="nav-link">Android API</a></div><div class="nav-item"><a href="/installation/" class="nav-link router-link-active">节点安装</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/general/" class="nav-link">入门</a></div><div class="nav-item"><a href="/js-api/" class="nav-link">JS API</a></div><div class="nav-item"><a href="/ios-api/" class="nav-link">iOS API</a></div><div class="nav-item"><a href="/android-api/" class="nav-link">Android API</a></div><div class="nav-item"><a href="/installation/" class="nav-link router-link-active">节点安装</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/installation/" class="sidebar-link">节点安装手册</a></li><li><a href="/installation/install.html" class="sidebar-link">安装节点</a></li><li><a href="/installation/setup.html" class="sidebar-link">节点设置</a></li><li><a href="/installation/startup.html" class="active sidebar-link">节点启动</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/installation/startup.html#主要出块节点启动" class="sidebar-link">主要出块节点启动</a></li><li class="sidebar-sub-header"><a href="/installation/startup.html#备援出块节点启动" class="sidebar-link">备援出块节点启动</a></li><li class="sidebar-sub-header"><a href="/installation/startup.html#api-全节点启动" class="sidebar-link">API 全节点启动</a></li><li class="sidebar-sub-header"><a href="/installation/startup.html#出站与入站全节点启动" class="sidebar-link">出站与入站全节点启动</a></li></ul></li></ul> </div> <div class="page"> <div class="content"><h1 id="节点启动"><a href="#节点启动" aria-hidden="true" class="header-anchor">#</a> 节点启动</h1> <p>本章描述各个区块链节点启动所需设定。</p> <p>为了让节点程式可以随著系统启动，将节点以服务方式执行。编辑节点服务所需的单元档，让此档内容如「Systemd 服务单元档」所示:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> <span class="token function">vi</span> /etc/systemd/system/zeus-node.service
+</code></pre></div><p>Systemd 服务单元档(unit file):</p> <div class="language- extra-class"><pre class="language-text"><code>[Unit]
+Description = Zeus node
+
+[Service]
+ExecStart = /opt/zeus/witness_node -d /opt/zeus/witness_node_data_dir/
+
+[Install]
+WantedBy = multi-user.target
+</code></pre></div><p>安装服务</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> systemctl daemon-reload
+$ <span class="token function">sudo</span> systemctl <span class="token function">enable</span> zeus-node
+</code></pre></div><p>节点服务单元档安装完成后，节点程式会随系统启动自动执行。</p> <p>有时需要手动执行、停止或检查服务状态，可以按照下面指令进行。</p> <p>启动服务:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> systemctl start zeus-node
+</code></pre></div><p>停止服务:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> systemctl start zeus-node
+</code></pre></div><p>检查服务状态:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token variable">$sudo</span> systemctl status zeus-node
+</code></pre></div><h2 id="主要出块节点启动"><a href="#主要出块节点启动" aria-hidden="true" class="header-anchor">#</a> 主要出块节点启动</h2> <ol><li>建立初始化目录，复制必要档案并执行</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">mkdir</span> -p /opt/zeus/
+$ <span class="token function">cp</span> witness_node /opt/zeus/
+$ <span class="token function">cp</span> genesis.json /opt/zeus/
+$ <span class="token function">cp</span> config.ini /opt/zeus/
+$ <span class="token function">cd</span> /opt/zeus/
+$ <span class="token function">chmod</span> +x witness_node
+$ ./witness_node --genesis-json genesis.json
+<span class="token comment">## 执行后，出现 chain-id 之后，使用 control-c 中断</span>
+</code></pre></div><ol start="2"><li>复制主要环境档案到特定目录</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">mv</span> genesis.json ./witness_node_data_dir/
+$ <span class="token function">mv</span> config.ini ./witness_node_data_dir/
+</code></pre></div><ol start="3"><li>修改 ./witness_node_data_dir/config.ini 档案</li></ol> <p>下面为 config.ini 范例：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># Endpoint for P2P node to listen on</span>
+ p2p-endpoint <span class="token operator">=</span> 0.0.0.0:35789
+
+<span class="token comment"># P2P nodes to connect to on startup (may specify multiple times)</span>
+<span class="token comment"># seed-node = ## 创世节点此处不需设定</span>
+
+<span class="token comment"># JSON array of P2P nodes to connect to on startup</span>
+ seed-nodes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">## 创世节点此部分需设定为空</span>
+
+<span class="token comment"># Pairs of [BLOCK_NUM,BLOCK_ID] that should be enforced as checkpoints.</span>
+<span class="token comment"># checkpoint =</span>
+
+<span class="token comment"># Endpoint for websocket RPC to listen on</span>
+<span class="token comment"># rpc-endpoint = ## 创世节点并不会用到RPC 故此处不另做设定</span>
+
+<span class="token comment"># Endpoint for TLS websocket RPC to listen on</span>
+<span class="token comment"># rpc-tls-endpoint =</span>
+
+<span class="token comment"># The TLS certificate file for this server</span>
+<span class="token comment"># server-pem =</span>
+
+<span class="token comment"># Password for this certificate</span>
+<span class="token comment"># server-pem-password =</span>
+
+<span class="token comment"># File to read Genesis State from</span>
+genesis-json <span class="token operator">=</span> /opt/zeus/witness_node_data_dir/genesis.json <span class="token comment">## 指定 genesis.json档案位址，这个项目每个节点都必须做设定</span>
+
+<span class="token comment"># Block signing key to use for init witnesses, overrides genesis file</span>
+<span class="token comment"># dbg-init-key =</span>
+
+<span class="token comment"># JSON file specifying API permissions</span>
+<span class="token comment"># api-access =</span>
+
+<span class="token comment"># Space-separated list of plugins to activate</span>
+<span class="token comment"># plugins =</span>
+
+<span class="token comment"># Enable block production, even if the chain is stale.</span>
+enable-stale-production <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token comment">## 所有的见证人节点此部分需设定为 true才能正确出块。其他同步用全节点这部分应设定为 false。</span>
+
+<span class="token comment"># Percent of witnesses (0-99) that must be participating in order to produce blocks</span>
+required-participation <span class="token operator">=</span> <span class="token boolean">false</span>
+
+<span class="token comment"># ID of witness controlled by this node (e.g. &quot;1.6.5&quot;, quotes are required, may specify multiple times)</span>
+ witness-id <span class="token operator">=</span> <span class="token string">&quot;1.6.1&quot;</span> <span class="token comment">## witness-id = “1.6.x” x 部分为帐号序列，需要与 genesis.json 内定的见证人序列号一致。也就是 genesis.json中指定的第一位见证人，那么这里就是用 1.6.1。若是第二位见证人，这里就用 1.6.2。这里的id 指定，需要与 genesis.json 里的序列一致，也必须与下面参数中的公钥与私钥一致。（非见证人节点，这个位置就不需要。）</span>
+
+<span class="token comment"># Tuple of [PublicKey, WIF private key] (may specify multiple times),The owner of the private key is nico</span>
+private-key <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;MTN6P5hfysmhpniKfY7MbvwU7ZKhsagS6YZ69ZmooZkDtyTU8dtqX&quot;</span>,<span class="token string">&quot;5KHKmBk8jySJC9eZeN9HGBeHo4gE1ULQCkjSpSVSDiVAizZnV2o&quot;</span><span class="token punctuation">]</span> <span class="token comment">## 见证人节点的公钥与私钥，前为公钥后为私钥。这里的资料需要搭配前项 witness-id，必须一致。</span>
+
+<span class="token comment"># Account ID to track history for (may specify multiple times)</span>
+<span class="token comment"># track-account =</span>
+
+<span class="token comment"># Keep only those operations in memory that are related to account history tracking</span>
+partial-operations <span class="token operator">=</span> 1
+
+<span class="token comment"># Maximum number of operations per account will be kept in memory</span>
+max-ops-per-account <span class="token operator">=</span> 1000
+
+<span class="token comment"># Elastic Search database node url</span>
+<span class="token comment"># elasticsearch-node-url =</span>
+<span class="token comment"># Number of bulk documents to index on replay(5000)</span>
+<span class="token comment"># elasticsearch-bulk-replay =</span>
+
+<span class="token comment"># Number of bulk documents to index on a syncronied chain(10)</span>
+<span class="token comment"># elasticsearch-bulk-sync =</span>
+
+<span class="token comment"># Log bulk events to database</span>
+<span class="token comment"># elasticsearch-logs =</span>
+
+<span class="token comment"># Use visitor to index additional data(slows down the replay)</span>
+<span class="token comment"># elasticsearch-visitor =</span>
+
+<span class="token comment"># Track market history by grouping orders into buckets of equal size measured in seconds specified as a JSON array of numbers</span>
+bucket-size <span class="token operator">=</span> <span class="token punctuation">[</span>60,300,900,1800,3600,14400,86400<span class="token punctuation">]</span>
+
+<span class="token comment"># How far back in time to track history for each bucket size, measured in the number of buckets (default: 1000)</span>
+history-per-size <span class="token operator">=</span> 1000
+
+<span class="token comment"># Will only store this amount of matched orders for each market in order history for querying, or those meet the other option, which has more data (default: 1000)</span>
+max-order-his-records-per-market <span class="token operator">=</span> 1000
+
+<span class="token comment"># Will only store matched orders in last X seconds for each market in order history for querying, or those meet the other option, which has more data (default: 259200 (3 days))</span>
+max-order-his-seconds-per-market <span class="token operator">=</span> 259200
+
+<span class="token comment"># RPC endpoint of a trusted validating node (required)</span>
+<span class="token comment"># trusted-node =</span>
+
+<span class="token comment"># Block number after which to do a snapshot</span>
+<span class="token comment"># snapshot-at-block =</span>
+
+<span class="token comment"># Block time (ISO format) after which to do a snapshot</span>
+<span class="token comment"># snapshot-at-time =</span>
+
+<span class="token comment"># Pathname of JSON file where to store the snapshot</span>
+<span class="token comment"># snapshot-to =</span>
+</code></pre></div><h2 id="备援出块节点启动"><a href="#备援出块节点启动" aria-hidden="true" class="header-anchor">#</a> 备援出块节点启动</h2> <ol><li>建立初始化目录，复制必要档案并执行</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">mkdir</span> -p /opt/zeus/
+$ <span class="token function">cp</span> witness_node /opt/zeus/
+$ <span class="token function">cp</span> genesis.json /opt/zeus/
+$ <span class="token function">cp</span> config.ini /opt/zeus/
+$ <span class="token function">cd</span> /opt/zeus/
+$ <span class="token function">chmod</span> +x witness_node
+$ ./witness_node --genesis-json genesis.json -s 10.3.4.2:35789 <span class="token comment">##这个为创世节点的IP与端口，联盟见证人节点此处则设定为出口节点IP与端口。</span>
+<span class="token comment">## 执行后，出现 chain-id 之后，使用 control-c 中断。需要核对是否与正式链的Chain ID一致。</span>
+</code></pre></div><ol start="2"><li>复制主要环境档案到特定目录</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">mv</span> genesis.json ./witness_node_data_dir/
+$ <span class="token function">mv</span> config.ini ./witness_node_data_dir/
+</code></pre></div><ol start="3"><li>修改 ./witness_node_data_dir/config.ini 档案</li></ol> <p>下面为 config.ini 范例：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># Endpoint for P2P node to listen on</span>
+ p2p-endpoint <span class="token operator">=</span> 0.0.0.0:35789
+
+<span class="token comment"># P2P nodes to connect to on startup (may specify multiple times)</span>
+ seed-node <span class="token operator">=</span> 10.3.4.2:35789 <span class="token comment">## 备援见证人节点，此处需设定为创世节点IP 与端口。联盟主见证人节点与联盟备援见证人节点，这一行设定为出口节点与端口。</span>
+
+<span class="token comment"># JSON array of P2P nodes to connect to on startup</span>
+ seed-nodes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">## 备援见证人节点此部分需设定为空。联盟主见证人节点与备援见证人节点此处设定亦为空白。</span>
+
+<span class="token comment"># Pairs of [BLOCK_NUM,BLOCK_ID] that should be enforced as checkpoints.</span>
+<span class="token comment"># checkpoint =</span>
+
+<span class="token comment"># Endpoint for websocket RPC to listen on</span>
+<span class="token comment"># rpc-endpoint = ## 见证人节点并不会用到RPC 故此处不另做设定</span>
+
+<span class="token comment"># Endpoint for TLS websocket RPC to listen on</span>
+<span class="token comment"># rpc-tls-endpoint =</span>
+
+<span class="token comment"># The TLS certificate file for this server</span>
+<span class="token comment"># server-pem =</span>
+
+<span class="token comment"># Password for this certificate</span>
+<span class="token comment"># server-pem-password =</span>
+
+<span class="token comment"># File to read Genesis State from</span>
+ genesis-json <span class="token operator">=</span> /opt/zeus/witness_node_data_dir/genesis.json <span class="token comment">## 指定 genesis.json档案位址，这个项目每个节点都必须做设定</span>
+<span class="token comment"># Block signing key to use for init witnesses, overrides genesis file</span>
+<span class="token comment"># dbg-init-key =</span>
+
+<span class="token comment"># JSON file specifying API permissions</span>
+<span class="token comment"># api-access =</span>
+
+<span class="token comment"># Space-separated list of plugins to activate</span>
+<span class="token comment"># plugins =</span>
+
+<span class="token comment"># Enable block production, even if the chain is stale.</span>
+enable-stale-production <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token comment">## 所有的见证人节点此部分需设定为 true才能正确出块。其他同步用全节点这部分应设定为 false。</span>
+
+<span class="token comment"># Percent of witnesses (0-99) that must be participating in order to produce blocks</span>
+required-participation <span class="token operator">=</span> <span class="token boolean">false</span>
+
+<span class="token comment"># ID of witness controlled by this node (e.g. &quot;1.6.5&quot;, quotes are required, may specify multiple times)</span>
+ witness-id <span class="token operator">=</span> <span class="token string">&quot;1.6.1&quot;</span> <span class="token comment">## witness-id = “1.6.x” x 部分为帐号序列，需要与 genesis.json 内定的见证人序列号一致。也就是 genesis.json中指定的第一位见证人，那么这里就是用 1.6.1。若是第二位见证人，这里就用 1.6.2。这里的id 指定，需要与 genesis.json 里的序列一致，也必须与下面参数中的公钥与私钥一致。（非见证人节点，这个位置就不需要。）</span>
+
+<span class="token comment"># Tuple of [PublicKey, WIF private key] (may specify multiple times),The owner of the private key is nico</span>
+private-key <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;MTN6P5hfysmhpniKfY7MbvwU7ZKhsagS6YZ69ZmooZkDtyTU8dtqX&quot;</span>,<span class="token string">&quot;5KHKmBk8jySJC9eZeN9HGBeHo4gE1ULQCkjSpSVSDiVAizZnV2o&quot;</span><span class="token punctuation">]</span> <span class="token comment">## 见证人节点的公钥与私钥，前为公钥后为私钥。这里的资料需要搭配前项 witness-id，必须一致。</span>
+
+<span class="token comment"># Account ID to track history for (may specify multiple times)</span>
+<span class="token comment"># track-account =</span>
+
+<span class="token comment"># Keep only those operations in memory that are related to account history tracking</span>
+partial-operations <span class="token operator">=</span> 1
+
+<span class="token comment"># Maximum number of operations per account will be kept in memory</span>
+max-ops-per-account <span class="token operator">=</span> 1000
+
+<span class="token comment"># Elastic Search database node url</span>
+<span class="token comment"># elasticsearch-node-url =</span>
+
+<span class="token comment"># Number of bulk documents to index on replay(5000)</span>
+<span class="token comment"># elasticsearch-bulk-replay =</span>
+<span class="token comment"># Number of bulk documents to index on a syncronied chain(10)</span>
+<span class="token comment"># elasticsearch-bulk-sync =</span>
+
+<span class="token comment"># Log bulk events to database</span>
+<span class="token comment"># elasticsearch-logs =</span>
+
+<span class="token comment"># Use visitor to index additional data(slows down the replay)</span>
+<span class="token comment"># elasticsearch-visitor =</span>
+
+<span class="token comment"># Track market history by grouping orders into buckets of equal size measured in seconds specified as a JSON array of numbers</span>
+bucket-size <span class="token operator">=</span> <span class="token punctuation">[</span>60,300,900,1800,3600,14400,86400<span class="token punctuation">]</span>
+
+<span class="token comment"># How far back in time to track history for each bucket size, measured in the number of buckets (default: 1000)</span>
+history-per-size <span class="token operator">=</span> 1000
+
+<span class="token comment"># Will only store this amount of matched orders for each market in order history for querying, or those meet the other option, which has more data (default: 1000)</span>
+max-order-his-records-per-market <span class="token operator">=</span> 1000
+
+<span class="token comment"># Will only store matched orders in last X seconds for each market in order history for querying, or those meet the other option, which has more data (default: 259200 (3 days))</span>
+max-order-his-seconds-per-market <span class="token operator">=</span> 259200
+
+<span class="token comment"># RPC endpoint of a trusted validating node (required)</span>
+<span class="token comment"># trusted-node =</span>
+
+<span class="token comment"># Block number after which to do a snapshot</span>
+<span class="token comment"># snapshot-at-block =</span>
+
+<span class="token comment"># Block time (ISO format) after which to do a snapshot</span>
+<span class="token comment"># snapshot-at-time =</span>
+
+<span class="token comment"># Pathname of JSON file where to store the snapshot</span>
+<span class="token comment"># snapshot-to =</span>
+</code></pre></div><h2 id="api-全节点启动"><a href="#api-全节点启动" aria-hidden="true" class="header-anchor">#</a> API 全节点启动</h2> <ol><li>建立初始化目录，复制必要档案并执行</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">mkdir</span> -p /opt/zeus/
+$ <span class="token function">cp</span> witness_node /opt/zeus/
+$ <span class="token function">cp</span> genesis.json /opt/zeus/
+$ <span class="token function">cp</span> config.ini /opt/zeus/
+$ <span class="token function">cd</span> /opt/zeus/
+$ <span class="token function">chmod</span> +x witness_node
+$ ./witness_node --genesis-json genesis.json -s 10.3.4.2:35789 <span class="token comment">##这个为创世节点的IP与端口，联盟见证人节点此处则设定为出口节点IP与端口。</span>
+<span class="token comment">## 执行后，出现 chain-id 之后，使用 control-c 中断。需要核对是否与正式链的Chain ID一致。</span>
+</code></pre></div><ol start="2"><li>复制主要环境档案到特定目录</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">mv</span> genesis.json ./witness_node_data_dir/
+$ <span class="token function">mv</span> config.ini ./witness_node_data_dir/
+</code></pre></div><ol start="3"><li>修改 ./witness_node_data_dir/config.ini 档案</li></ol> <p>下面为 config.ini 范例：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># Endpoint for P2P node to listen on</span>
+ p2p-endpoint <span class="token operator">=</span> 0.0.0.0:35789
+
+<span class="token comment"># P2P nodes to connect to on startup (may specify multiple times)</span>
+ seed-node <span class="token operator">=</span> 10.3.4.2:35789 <span class="token comment">## 备援见证人节点，此处需设定为创世节点IP 与端口。联盟主见证人节点与联盟备援见证人节点，这一行设定为出口节点与端口。</span>
+
+<span class="token comment"># JSON array of P2P nodes to connect to on startup</span>
+ seed-nodes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">## 备援见证人节点此部分需设定为空。联盟主见证人节点与备援见证人节点此处设定亦为空白。</span>
+
+<span class="token comment"># Pairs of [BLOCK_NUM,BLOCK_ID] that should be enforced as checkpoints.</span>
+<span class="token comment"># checkpoint =</span>
+
+<span class="token comment"># Endpoint for websocket RPC to listen on</span>
+<span class="token comment"># rpc-endpoint = ## 见证人节点并不会用到RPC 故此处不另做设定</span>
+
+<span class="token comment"># Endpoint for TLS websocket RPC to listen on</span>
+<span class="token comment"># rpc-tls-endpoint =</span>
+
+<span class="token comment"># The TLS certificate file for this server</span>
+<span class="token comment"># server-pem =</span>
+
+<span class="token comment"># Password for this certificate</span>
+<span class="token comment"># server-pem-password =</span>
+
+<span class="token comment"># File to read Genesis State from</span>
+ genesis-json <span class="token operator">=</span> /opt/zeus/witness_node_data_dir/genesis.json <span class="token comment">## 指定 genesis.json档案位址，这个项目每个节点都必须做设定</span>
+<span class="token comment"># Block signing key to use for init witnesses, overrides genesis file</span>
+<span class="token comment"># dbg-init-key =</span>
+
+<span class="token comment"># JSON file specifying API permissions</span>
+<span class="token comment"># api-access =</span>
+
+<span class="token comment"># Space-separated list of plugins to activate</span>
+<span class="token comment"># plugins =</span>
+
+<span class="token comment"># Enable block production, even if the chain is stale.</span>
+enable-stale-production <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token comment">## 所有的见证人节点此部分需设定为 true才能正确出块。其他同步用全节点这部分应设定为 false。</span>
+
+<span class="token comment"># Percent of witnesses (0-99) that must be participating in order to produce blocks</span>
+required-participation <span class="token operator">=</span> <span class="token boolean">false</span>
+
+<span class="token comment"># ID of witness controlled by this node (e.g. &quot;1.6.5&quot;, quotes are required, may specify multiple times)</span>
+ witness-id <span class="token operator">=</span> <span class="token string">&quot;1.6.1&quot;</span> <span class="token comment">## witness-id = “1.6.x” x 部分为帐号序列，需要与 genesis.json 内定的见证人序列号一致。也就是 genesis.json中指定的第一位见证人，那么这里就是用 1.6.1。若是第二位见证人，这里就用 1.6.2。这里的id 指定，需要与 genesis.json 里的序列一致，也必须与下面参数中的公钥与私钥一致。（非见证人节点，这个位置就不需要。）</span>
+
+<span class="token comment"># Tuple of [PublicKey, WIF private key] (may specify multiple times),The owner of the private key is nico</span>
+private-key <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;MTN6P5hfysmhpniKfY7MbvwU7ZKhsagS6YZ69ZmooZkDtyTU8dtqX&quot;</span>,<span class="token string">&quot;5KHKmBk8jySJC9eZeN9HGBeHo4gE1ULQCkjSpSVSDiVAizZnV2o&quot;</span><span class="token punctuation">]</span> <span class="token comment">## 见证人节点的公钥与私钥，前为公钥后为私钥。这里的资料需要搭配前项 witness-id，必须一致。</span>
+
+<span class="token comment"># Account ID to track history for (may specify multiple times)</span>
+<span class="token comment"># track-account =</span>
+
+<span class="token comment"># Keep only those operations in memory that are related to account history tracking</span>
+partial-operations <span class="token operator">=</span> 1
+
+<span class="token comment"># Maximum number of operations per account will be kept in memory</span>
+max-ops-per-account <span class="token operator">=</span> 1000
+
+<span class="token comment"># Elastic Search database node url</span>
+<span class="token comment"># elasticsearch-node-url =</span>
+
+<span class="token comment"># Number of bulk documents to index on replay(5000)</span>
+<span class="token comment"># elasticsearch-bulk-replay =</span>
+<span class="token comment"># Number of bulk documents to index on a syncronied chain(10)</span>
+<span class="token comment"># elasticsearch-bulk-sync =</span>
+
+<span class="token comment"># Log bulk events to database</span>
+<span class="token comment"># elasticsearch-logs =</span>
+
+<span class="token comment"># Use visitor to index additional data(slows down the replay)</span>
+<span class="token comment"># elasticsearch-visitor =</span>
+
+<span class="token comment"># Track market history by grouping orders into buckets of equal size measured in seconds specified as a JSON array of numbers</span>
+bucket-size <span class="token operator">=</span> <span class="token punctuation">[</span>60,300,900,1800,3600,14400,86400<span class="token punctuation">]</span>
+
+<span class="token comment"># How far back in time to track history for each bucket size, measured in the number of buckets (default: 1000)</span>
+history-per-size <span class="token operator">=</span> 1000
+
+<span class="token comment"># Will only store this amount of matched orders for each market in order history for querying, or those meet the other option, which has more data (default: 1000)</span>
+max-order-his-records-per-market <span class="token operator">=</span> 1000
+
+<span class="token comment"># Will only store matched orders in last X seconds for each market in order history for querying, or those meet the other option, which has more data (default: 259200 (3 days))</span>
+max-order-his-seconds-per-market <span class="token operator">=</span> 259200
+
+<span class="token comment"># RPC endpoint of a trusted validating node (required)</span>
+<span class="token comment"># trusted-node =</span>
+
+<span class="token comment"># Block number after which to do a snapshot</span>
+<span class="token comment"># snapshot-at-block =</span>
+
+<span class="token comment"># Block time (ISO format) after which to do a snapshot</span>
+<span class="token comment"># snapshot-at-time =</span>
+
+<span class="token comment"># Pathname of JSON file where to store the snapshot</span>
+<span class="token comment"># snapshot-to =</span>
+</code></pre></div><h2 id="出站与入站全节点启动"><a href="#出站与入站全节点启动" aria-hidden="true" class="header-anchor">#</a> 出站与入站全节点启动</h2> <ol><li>建立初始化目录，复制必要档案并执行</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">mkdir</span> -p /opt/zeus/
+$ <span class="token function">cp</span> witness_node /opt/zeus/
+$ <span class="token function">cp</span> genesis.json /opt/zeus/
+$ <span class="token function">cp</span> config.ini /opt/zeus/
+$ <span class="token function">cd</span> /opt/zeus/
+$ <span class="token function">chmod</span> +x witness_node
+$ ./witness_node --genesis-json genesis.json -s 10.3.4.2:35789 <span class="token comment">##这个为创世节点的IP与端口，联盟见证人节点此处则设定为出口节点IP与端口。</span>
+<span class="token comment">## 执行后，出现 chain-id 之后，使用 control-c 中断。需要核对是否与正式链的Chain ID一致。</span>
+</code></pre></div><ol start="2"><li>复制主要环境档案到特定目录</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">mv</span> genesis.json ./witness_node_data_dir/
+$ <span class="token function">mv</span> config.ini ./witness_node_data_dir/
+</code></pre></div><ol start="3"><li>修改 ./witness_node_data_dir/config.ini 档案</li></ol> <p>下面为 config.ini 范例：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># Endpoint for P2P node to listen on</span>
+ p2p-endpoint <span class="token operator">=</span> 0.0.0.0:35789
+
+<span class="token comment"># P2P nodes to connect to on startup (may specify multiple times)</span>
+ seed-node <span class="token operator">=</span> 10.3.4.2:35789 <span class="token comment">## 备援见证人节点，此处需设定为创世节点IP 与端口。联盟主见证人节点与联盟备援见证人节点，这一行设定为出口节点与端口。</span>
+
+<span class="token comment"># JSON array of P2P nodes to connect to on startup</span>
+ seed-nodes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">## 备援见证人节点此部分需设定为空。联盟主见证人节点与备援见证人节点此处设定亦为空白。</span>
+
+<span class="token comment"># Pairs of [BLOCK_NUM,BLOCK_ID] that should be enforced as checkpoints.</span>
+<span class="token comment"># checkpoint =</span>
+
+<span class="token comment"># Endpoint for websocket RPC to listen on</span>
+<span class="token comment"># rpc-endpoint = ## 见证人节点并不会用到RPC 故此处不另做设定</span>
+
+<span class="token comment"># Endpoint for TLS websocket RPC to listen on</span>
+<span class="token comment"># rpc-tls-endpoint =</span>
+
+<span class="token comment"># The TLS certificate file for this server</span>
+<span class="token comment"># server-pem =</span>
+
+<span class="token comment"># Password for this certificate</span>
+<span class="token comment"># server-pem-password =</span>
+
+<span class="token comment"># File to read Genesis State from</span>
+ genesis-json <span class="token operator">=</span> /opt/zeus/witness_node_data_dir/genesis.json <span class="token comment">## 指定 genesis.json档案位址，这个项目每个节点都必须做设定</span>
+<span class="token comment"># Block signing key to use for init witnesses, overrides genesis file</span>
+<span class="token comment"># dbg-init-key =</span>
+
+<span class="token comment"># JSON file specifying API permissions</span>
+<span class="token comment"># api-access =</span>
+
+<span class="token comment"># Space-separated list of plugins to activate</span>
+<span class="token comment"># plugins =</span>
+
+<span class="token comment"># Enable block production, even if the chain is stale.</span>
+enable-stale-production <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token comment">## 所有的见证人节点此部分需设定为 true才能正确出块。其他同步用全节点这部分应设定为 flase。</span>
+
+<span class="token comment"># Percent of witnesses (0-99) that must be participating in order to produce blocks</span>
+required-participation <span class="token operator">=</span> <span class="token boolean">false</span>
+
+<span class="token comment"># ID of witness controlled by this node (e.g. &quot;1.6.5&quot;, quotes are required, may specify multiple times)</span>
+ witness-id <span class="token operator">=</span> <span class="token string">&quot;1.6.1&quot;</span> <span class="token comment">## witness-id = “1.6.x” x 部分为帐号序列，需要与 genesis.json 内定的见证人序列号一致。也就是 genesis.json中指定的第一位见证人，那么这里就是用 1.6.1。若是第二位见证人，这里就用 1.6.2。这里的id 指定，需要与 genesis.json 里的序列一致，也必须与下面参数中的公钥与私钥一致。（非见证人节点，这个位置就不需要。）</span>
+
+<span class="token comment"># Tuple of [PublicKey, WIF private key] (may specify multiple times),The owner of the private key is nico</span>
+private-key <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;MTN6P5hfysmhpniKfY7MbvwU7ZKhsagS6YZ69ZmooZkDtyTU8dtqX&quot;</span>,<span class="token string">&quot;5KHKmBk8jySJC9eZeN9HGBeHo4gE1ULQCkjSpSVSDiVAizZnV2o&quot;</span><span class="token punctuation">]</span> <span class="token comment">## 见证人节点的公钥与私钥，前为公钥后为私钥。这里的资料需要搭配前项 witness-id，必须一致。</span>
+
+<span class="token comment"># Account ID to track history for (may specify multiple times)</span>
+<span class="token comment"># track-account =</span>
+
+<span class="token comment"># Keep only those operations in memory that are related to account history tracking</span>
+partial-operations <span class="token operator">=</span> 1
+
+<span class="token comment"># Maximum number of operations per account will be kept in memory</span>
+max-ops-per-account <span class="token operator">=</span> 1000
+
+<span class="token comment"># Elastic Search database node url</span>
+<span class="token comment"># elasticsearch-node-url =</span>
+
+<span class="token comment"># Number of bulk documents to index on replay(5000)</span>
+<span class="token comment"># elasticsearch-bulk-replay =</span>
+<span class="token comment"># Number of bulk documents to index on a syncronied chain(10)</span>
+<span class="token comment"># elasticsearch-bulk-sync =</span>
+
+<span class="token comment"># Log bulk events to database</span>
+<span class="token comment"># elasticsearch-logs =</span>
+
+<span class="token comment"># Use visitor to index additional data(slows down the replay)</span>
+<span class="token comment"># elasticsearch-visitor =</span>
+
+<span class="token comment"># Track market history by grouping orders into buckets of equal size measured in seconds specified as a JSON array of numbers</span>
+bucket-size <span class="token operator">=</span> <span class="token punctuation">[</span>60,300,900,1800,3600,14400,86400<span class="token punctuation">]</span>
+
+<span class="token comment"># How far back in time to track history for each bucket size, measured in the number of buckets (default: 1000)</span>
+history-per-size <span class="token operator">=</span> 1000
+
+<span class="token comment"># Will only store this amount of matched orders for each market in order history for querying, or those meet the other option, which has more data (default: 1000)</span>
+max-order-his-records-per-market <span class="token operator">=</span> 1000
+
+<span class="token comment"># Will only store matched orders in last X seconds for each market in order history for querying, or those meet the other option, which has more data (default: 259200 (3 days))</span>
+max-order-his-seconds-per-market <span class="token operator">=</span> 259200
+
+<span class="token comment"># RPC endpoint of a trusted validating node (required)</span>
+<span class="token comment"># trusted-node =</span>
+
+<span class="token comment"># Block number after which to do a snapshot</span>
+<span class="token comment"># snapshot-at-block =</span>
+
+<span class="token comment"># Block time (ISO format) after which to do a snapshot</span>
+<span class="token comment"># snapshot-at-time =</span>
+
+<span class="token comment"># Pathname of JSON file where to store the snapshot</span>
+<span class="token comment"># snapshot-to =</span>
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/installation/setup.html" class="prev">
+          节点设置
+        </a></span> <!----></p></div> </div> <!----></div></div>
+    <script src="/assets/js/17.2490e2d2.js" defer></script><script src="/assets/js/app.295daaac.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1. WEB 容器的互操作接口概述 | 主神链技术文档</title>
+    <meta name="description" content="所有主神联盟链中的公司, 会共同开发区块链底层功能, 每个公司专注在自己擅长或感兴趣的领域, 并开放接口及SDK给主神联盟链中的所有成员共同使用。">
+    <link rel="icon" href="/logo.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.1387b97d.css" as="style"><link rel="preload" href="/assets/js/app.295daaac.js" as="script"><link rel="preload" href="/assets/js/21.128b6972.js" as="script"><link rel="prefetch" href="/assets/js/10.15f96993.js"><link rel="prefetch" href="/assets/js/2.9a15e329.js"><link rel="prefetch" href="/assets/js/3.0ed1ab3f.js"><link rel="prefetch" href="/assets/js/4.d661e659.js"><link rel="prefetch" href="/assets/js/5.47999b73.js"><link rel="prefetch" href="/assets/js/6.732a0f33.js"><link rel="prefetch" href="/assets/js/7.067f464e.js"><link rel="prefetch" href="/assets/js/8.003e6c66.js"><link rel="prefetch" href="/assets/js/9.fe62e218.js"><link rel="prefetch" href="/assets/js/11.6d59fc31.js"><link rel="prefetch" href="/assets/js/12.f1319fd2.js"><link rel="prefetch" href="/assets/js/13.a651f5df.js"><link rel="prefetch" href="/assets/js/14.d4352c4d.js"><link rel="prefetch" href="/assets/js/15.ea1ac61f.js"><link rel="prefetch" href="/assets/js/16.abd660b2.js"><link rel="prefetch" href="/assets/js/17.2490e2d2.js"><link rel="prefetch" href="/assets/js/18.b7abab66.js"><link rel="prefetch" href="/assets/js/19.39481309.js"><link rel="prefetch" href="/assets/js/20.2b9f8a7d.js"><link rel="prefetch" href="/assets/js/22.176ebccb.js"><link rel="prefetch" href="/assets/js/23.eafc5edc.js"><link rel="prefetch" href="/assets/js/24.a77288cc.js"><link rel="prefetch" href="/assets/js/25.0bfa46e4.js"><link rel="prefetch" href="/assets/js/26.e4fce782.js"><link rel="prefetch" href="/assets/js/27.da527dcf.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1387b97d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">主神链技术文档</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/general/" class="nav-link">入门</a></div><div class="nav-item"><a href="/js-api/" class="nav-link router-link-active">JS API</a></div><div class="nav-item"><a href="/ios-api/" class="nav-link">iOS API</a></div><div class="nav-item"><a href="/android-api/" class="nav-link">Android API</a></div><div class="nav-item"><a href="/installation/" class="nav-link">节点安装</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/general/" class="nav-link">入门</a></div><div class="nav-item"><a href="/js-api/" class="nav-link router-link-active">JS API</a></div><div class="nav-item"><a href="/ios-api/" class="nav-link">iOS API</a></div><div class="nav-item"><a href="/android-api/" class="nav-link">Android API</a></div><div class="nav-item"><a href="/installation/" class="nav-link">节点安装</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/js-api/" class="sidebar-link">JS API 参考</a></li><li><a href="/js-api/ch01.html" class="active sidebar-link">1. WEB 容器的互操作接口概述</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/js-api/ch01.html#_1-1-类库引用说明" class="sidebar-link">1.1 类库引用说明</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/js-api/ch01.html#_1-1-1-引入方式" class="sidebar-link">1.1.1 引入方式</a></li><li class="sidebar-sub-header"><a href="/js-api/ch01.html#_1-1-2-实例化类库对象" class="sidebar-link">1.1.2 实例化类库对象</a></li></ul></li><li class="sidebar-sub-header"><a href="/js-api/ch01.html#_1-2-初始化类环境" class="sidebar-link">1.2 初始化类环境</a></li><li class="sidebar-sub-header"><a href="/js-api/ch01.html#_1-3-api-参数统一说明" class="sidebar-link">1.3 API 参数统一说明</a></li></ul></li><li><a href="/js-api/ch02.html" class="sidebar-link">2. 游戏接入的要点概括</a></li><li><a href="/js-api/ch03.html" class="sidebar-link">3. 区块链系统的互操作 API</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="_1-web-容器的互操作接口概述"><a href="#_1-web-容器的互操作接口概述" aria-hidden="true" class="header-anchor">#</a> 1. WEB 容器的互操作接口概述</h1> <h2 id="_1-1-类库引用说明"><a href="#_1-1-类库引用说明" aria-hidden="true" class="header-anchor">#</a> 1.1 类库引用说明</h2> <h3 id="_1-1-1-引入方式"><a href="#_1-1-1-引入方式" aria-hidden="true" class="header-anchor">#</a> 1.1.1 引入方式</h3> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">&quot;text/javascript&quot;</span> src<span class="token operator">=</span><span class="token string">&quot;/js/bcl.min.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre></div><h3 id="_1-1-2-实例化类库对象"><a href="#_1-1-2-实例化类库对象" aria-hidden="true" class="header-anchor">#</a> 1.1.2 实例化类库对象</h3> <p>Bcl 对象为类与区块链交互入口，bcl 对象实例化调用方式如下:</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> _configParams<span class="token operator">=</span><span class="token punctuation">{</span>
+        api_node<span class="token punctuation">:</span><span class="token punctuation">{</span><span class="token comment">//api 节点</span>
+          url<span class="token punctuation">:</span>”ws<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token constant">XXXXXXXXX</span>”<span class="token punctuation">,</span><span class="token comment">//节点 websocket 地址</span>
+          name<span class="token punctuation">:</span>”<span class="token constant">XXXX</span>”<span class="token comment">//节点名称</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        faucet_url<span class="token punctuation">:</span><span class="token string">&quot;http://***.***.***.***:****&quot;</span><span class="token punctuation">,</span> <span class="token comment">//注册入口</span>
+        chainID<span class="token punctuation">:</span>”xxxxx”  <span class="token operator">/</span><span class="token operator">/</span> 链 <span class="token constant">ID</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> bcl<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">BlockChainLib</span><span class="token punctuation">(</span>_configParams<span class="token punctuation">)</span><span class="token operator">/</span><span class="token operator">/</span> _configParams 为可选参数<span class="token punctuation">,</span>已默认链接节点服务器。
+</code></pre></div><h2 id="_1-2-初始化类环境"><a href="#_1-2-初始化类环境" aria-hidden="true" class="header-anchor">#</a> 1.2 初始化类环境</h2> <p>bcl 对象实例化完成后调用 init 方法，进行环境初始化。调用方式如下:</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> options<span class="token operator">=</span><span class="token punctuation">{</span>
+
+    autoReconnect<span class="token punctuation">:</span>ture<span class="token punctuation">,</span><span class="token comment">//非必填，当RPC断开时是否自动连接，默认为true</span>
+
+    callback<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token comment">//非必填，bcl初始化成功后(即与链成功建立连接后)将调用callback回调函数</span>
+
+    subscribeToRpcConnectionStatusCallback<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span>status<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token comment">//非必填，监听RPC连接状态，status: closed：rpc连接关闭,error：rpc连接错误，realopen：rpc连接成功</span>
+
+<span class="token punctuation">}</span>
+bcl<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span>
+</code></pre></div><h2 id="_1-3-api-参数统一说明"><a href="#_1-3-api-参数统一说明" aria-hidden="true" class="header-anchor">#</a> 1.3 API 参数统一说明</h2> <p>1 <strong>callback:</strong></p> <p>result 为 Object 对象,结构为{status:0,statusText:””},</p> <p>status=1 的时候表示注册成功，无 statusText 状态描述,</p> <p>status!=1 时, 意味执行失败，statusText 为失败状态描述，</p> <p>2 <strong>所有 API 不做特殊说明均只有一个参数，这个参数为一个对象，对象包含了所有相关参数，其中也包含 callback</strong></p> <p>调用示例:</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> options<span class="token operator">=</span><span class="token punctuation">{</span>
+    callback<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+bcl<span class="token punctuation">.</span><span class="token function">getPrivateKey</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span>
+</code></pre></div><p>3 API 中的参数类型不做特殊说明均为字符串</p> <p>4 API 的参数不做特殊说明均不能为空，callback 可选参数</p> <p>5 查询类 API 的 callback 返回数据实例:{status:1,data:[]}</p> <p>6 非查询类 API 的 callback 返回数据会多一个数据字段 trxData,值为一个对象</p> <p>示例</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token punctuation">{</span>
+
+block_num<span class="token punctuation">:</span><span class="token number">112260</span><span class="token punctuation">,</span><span class="token comment">//区块高度</span>
+
+trx_id<span class="token punctuation">:</span><span class="token string">&quot;#c34021555e01e846ade1e119e2060a60eb514309@112260&quot;</span><span class="token comment">//交易 ID</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><p>7 非查询类 API 如果涉及到关联 ID 业务(如创建道具产生道具 ID)的 callback 返回数据中将包含 data 对象</p> <p>示例</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code>data<span class="token punctuation">:</span><span class="token punctuation">{</span>
+
+result_id<span class="token punctuation">:</span><span class="token string">&quot;3.2.798&quot;</span>
+
+result_ids<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">&quot;3.2.798&quot;</span><span class="token punctuation">]</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><p>demo 上的 API 调用返回数据在控制台会有打印</p></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/js-api/" class="prev router-link-active">
+          JS API 参考
+        </a></span> <span class="next"><a href="/js-api/ch02.html">
+          2. 游戏接入的要点概括
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/21.128b6972.js" defer></script><script src="/assets/js/app.295daaac.js" defer></script>
+  </body>
+</html>

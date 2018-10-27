@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>iOS Objective-C 接口 | 主神链技术文档</title>
+    <meta name="description" content="所有主神联盟链中的公司, 会共同开发区块链底层功能, 每个公司专注在自己擅长或感兴趣的领域, 并开放接口及SDK给主神联盟链中的所有成员共同使用。">
+    <link rel="icon" href="/logo.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.1387b97d.css" as="style"><link rel="preload" href="/assets/js/app.295daaac.js" as="script"><link rel="preload" href="/assets/js/19.39481309.js" as="script"><link rel="prefetch" href="/assets/js/10.15f96993.js"><link rel="prefetch" href="/assets/js/2.9a15e329.js"><link rel="prefetch" href="/assets/js/3.0ed1ab3f.js"><link rel="prefetch" href="/assets/js/4.d661e659.js"><link rel="prefetch" href="/assets/js/5.47999b73.js"><link rel="prefetch" href="/assets/js/6.732a0f33.js"><link rel="prefetch" href="/assets/js/7.067f464e.js"><link rel="prefetch" href="/assets/js/8.003e6c66.js"><link rel="prefetch" href="/assets/js/9.fe62e218.js"><link rel="prefetch" href="/assets/js/11.6d59fc31.js"><link rel="prefetch" href="/assets/js/12.f1319fd2.js"><link rel="prefetch" href="/assets/js/13.a651f5df.js"><link rel="prefetch" href="/assets/js/14.d4352c4d.js"><link rel="prefetch" href="/assets/js/15.ea1ac61f.js"><link rel="prefetch" href="/assets/js/16.abd660b2.js"><link rel="prefetch" href="/assets/js/17.2490e2d2.js"><link rel="prefetch" href="/assets/js/18.b7abab66.js"><link rel="prefetch" href="/assets/js/20.2b9f8a7d.js"><link rel="prefetch" href="/assets/js/21.128b6972.js"><link rel="prefetch" href="/assets/js/22.176ebccb.js"><link rel="prefetch" href="/assets/js/23.eafc5edc.js"><link rel="prefetch" href="/assets/js/24.a77288cc.js"><link rel="prefetch" href="/assets/js/25.0bfa46e4.js"><link rel="prefetch" href="/assets/js/26.e4fce782.js"><link rel="prefetch" href="/assets/js/27.da527dcf.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1387b97d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">主神链技术文档</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/general/" class="nav-link">入门</a></div><div class="nav-item"><a href="/js-api/" class="nav-link">JS API</a></div><div class="nav-item"><a href="/ios-api/" class="nav-link router-link-active">iOS API</a></div><div class="nav-item"><a href="/android-api/" class="nav-link">Android API</a></div><div class="nav-item"><a href="/installation/" class="nav-link">节点安装</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/general/" class="nav-link">入门</a></div><div class="nav-item"><a href="/js-api/" class="nav-link">JS API</a></div><div class="nav-item"><a href="/ios-api/" class="nav-link router-link-active">iOS API</a></div><div class="nav-item"><a href="/android-api/" class="nav-link">Android API</a></div><div class="nav-item"><a href="/installation/" class="nav-link">节点安装</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/ios-api/" class="sidebar-link">iOS API 參考</a></li><li><a href="/ios-api/idl.html" class="active sidebar-link">iOS Objective-C 接口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ios-api/idl.html#账户管理" class="sidebar-link">账户管理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ios-api/idl.html#登录账号" class="sidebar-link">登录账号</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#退出登录" class="sidebar-link">退出登录</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#注册账号" class="sidebar-link">注册账号</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#修改密码" class="sidebar-link">修改密码</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#获取私钥" class="sidebar-link">获取私钥</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#通过私钥登录" class="sidebar-link">通过私钥登录</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#获取用户信息" class="sidebar-link">获取用户信息</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#转账" class="sidebar-link">转账</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#锁定账户" class="sidebar-link">锁定账户</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#解锁账号" class="sidebar-link">解锁账号</a></li></ul></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#代币操作" class="sidebar-link">代币操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ios-api/idl.html#查询账户拥有的所有资产列表" class="sidebar-link">查询账户拥有的所有资产列表</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#查询账户指定资产" class="sidebar-link">查询账户指定资产</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#查询账户记录" class="sidebar-link">查询账户记录</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#订阅账户记录" class="sidebar-link">订阅账户记录</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#查看当前登录账户收到的提议" class="sidebar-link">查看当前登录账户收到的提议</a></li></ul></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#游戏道具操作" class="sidebar-link">游戏道具操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ios-api/idl.html#注册游戏开发者" class="sidebar-link">注册游戏开发者</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#创建游戏版本" class="sidebar-link">创建游戏版本</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#提议关联游戏版本" class="sidebar-link">提议关联游戏版本</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#创建游戏道具" class="sidebar-link">创建游戏道具</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#删除游戏道具" class="sidebar-link">删除游戏道具</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#更新游戏道具数据" class="sidebar-link">更新游戏道具数据</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#查询道具详细信息" class="sidebar-link">查询道具详细信息</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#转移游戏道具" class="sidebar-link">转移游戏道具</a></li></ul></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#游戏道具买卖" class="sidebar-link">游戏道具买卖</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ios-api/idl.html#创建游戏道具出售单" class="sidebar-link">创建游戏道具出售单</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#取消游戏道具出售单" class="sidebar-link">取消游戏道具出售单</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#装填游戏道具出售单" class="sidebar-link">装填游戏道具出售单</a></li></ul></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#道具查询" class="sidebar-link">道具查询</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ios-api/idl.html#查询全网游戏道具售卖订单" class="sidebar-link">查询全网游戏道具售卖订单</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#查询账户下游戏道具售卖订单" class="sidebar-link">查询账户下游戏道具售卖订单</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#查询游戏开发者所关联的游戏版本" class="sidebar-link">查询游戏开发者所关联的游戏版本</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#查询游戏开发者所创建的道具" class="sidebar-link">查询游戏开发者所创建的道具</a></li></ul></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#节点投票" class="sidebar-link">节点投票</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ios-api/idl.html#代理投票账户" class="sidebar-link">代理投票账户</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#加载节点投票信息数据" class="sidebar-link">加载节点投票信息数据</a></li></ul></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#其它" class="sidebar-link">其它</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ios-api/idl.html#单例实例" class="sidebar-link">单例实例</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#库传参初始化" class="sidebar-link">库传参初始化</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#断开websoket通信" class="sidebar-link">断开websoket通信</a></li><li class="sidebar-sub-header"><a href="/ios-api/idl.html#查询block-txid" class="sidebar-link">查询block/TXID</a></li></ul></li></ul></li></ul> </div> <div class="page"> <div class="content"><h1 id="ios-objective-c-接口"><a href="#ios-objective-c-接口" aria-hidden="true" class="header-anchor">#</a> iOS Objective-C 接口</h1> <h2 id="账户管理"><a href="#账户管理" aria-hidden="true" class="header-anchor">#</a> 账户管理</h2> <h3 id="登录账号"><a href="#登录账号" aria-hidden="true" class="header-anchor">#</a> 登录账号</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+  登录账号
+
+ @param userName 用户名
+ @param pwd 密码
+ @param block 回调结果字典
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>LoginWithName<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>userName pwd<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>pwd Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="退出登录"><a href="#退出登录" aria-hidden="true" class="header-anchor">#</a> 退出登录</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+ 退出登录
+
+ @param block 结果
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>Logout<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+
+</code></pre></div><h3 id="注册账号"><a href="#注册账号" aria-hidden="true" class="header-anchor">#</a> 注册账号</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+  注册账号
+
+ @param userName 用户名
+ @param pwd 密码
+ @param block 回调结果字典
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>SignupWithName<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>userName pwd<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>pwd Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="修改密码"><a href="#修改密码" aria-hidden="true" class="header-anchor">#</a> 修改密码</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+  修改密码
+
+ @param oldPassword 旧密码
+ @param nowPassword 新密码
+ @param block 修改密码结果
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>ChangePasswordWithOldPwd<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>oldPassword NewPwd<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>nowPassword Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="获取私钥"><a href="#获取私钥" aria-hidden="true" class="header-anchor">#</a> 获取私钥</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+  获取私钥
+
+ @param block 回调结果字典
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>GetPrivateKey<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="通过私钥登录"><a href="#通过私钥登录" aria-hidden="true" class="header-anchor">#</a> 通过私钥登录</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+ 通过私钥登录
+
+ @param key 私钥
+ @param block 回调结果字典
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>KeyLoginWithPrivateKey<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>key Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="获取用户信息"><a href="#获取用户信息" aria-hidden="true" class="header-anchor">#</a> 获取用户信息</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+ 获取用户信息
+
+ @param account 账号
+ @param block 回调结果字典
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>GetUserInfoWithAccount<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>account Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="转账"><a href="#转账" aria-hidden="true" class="header-anchor">#</a> 转账</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+  转账 客户的可以通过获取的资产列表先校验对应资产余额是否足够
+
+ @param account 转给目标账号
+ @param assetId 资产Id 通过 getBalances先获取资产列表
+ @param amount 转账数量
+ @param memo 备注说明
+ @param block 回调结果字典
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>TransferAssetToAccount<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>account
+                       AssetId<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>assetId
+                        Amount<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>amount
+                          Memo<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>memo
+                      Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="锁定账户"><a href="#锁定账户" aria-hidden="true" class="header-anchor">#</a> 锁定账户</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+ 锁定账户
+
+ @param block 回调结果
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>LockAccountWithResultCallback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="解锁账号"><a href="#解锁账号" aria-hidden="true" class="header-anchor">#</a> 解锁账号</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+ 解锁账号
+
+ @param password 密码
+ @param block 回调结果
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>UnLockAccountByPassword<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>password Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h2 id="代币操作"><a href="#代币操作" aria-hidden="true" class="header-anchor">#</a> 代币操作</h2> <h3 id="查询账户拥有的所有资产列表"><a href="#查询账户拥有的所有资产列表" aria-hidden="true" class="header-anchor">#</a> 查询账户拥有的所有资产列表</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+ 查询账户拥有的所有资产列表
+
+ @param account 账号
+ @param unit 记账单位
+ @param block 查询结果回调
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>QueryAccountAllBalancesByAccount<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>account Unit<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>unit Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+
+</code></pre></div><h3 id="查询账户指定资产"><a href="#查询账户指定资产" aria-hidden="true" class="header-anchor">#</a> 查询账户指定资产</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+  查询账户指定资产
+
+ @param account 账号
+ @param assetIdOrSymbol 资产id或symbol
+ @param block 查询结果回调
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>GetAccountBalancesByAccount<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>account AssetIDOrSymbol<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>assetIdOrSymbol Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+
+</code></pre></div><h3 id="查询账户记录"><a href="#查询账户记录" aria-hidden="true" class="header-anchor">#</a> 查询账户记录</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+  查询账户记录
+
+ @param account 账号
+ @param limitCount 条数
+ @param block 查询结果回调
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>QueryUserOperationsByAccount<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>account Limit<span class="token punctuation">:</span><span class="token punctuation">(</span>NSInteger<span class="token punctuation">)</span>limitCount Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="订阅账户记录"><a href="#订阅账户记录" aria-hidden="true" class="header-anchor">#</a> 订阅账户记录</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+  订阅账户记录
+
+ @param account 账号
+ @param block 订阅结果
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>SubscribeToUserOperationsByAccount<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>account Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="查看当前登录账户收到的提议"><a href="#查看当前登录账户收到的提议" aria-hidden="true" class="header-anchor">#</a> 查看当前登录账户收到的提议</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+  查看当前登录账户收到的提议
+
+ @param block 结果
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>GetAccountProposalsWithResult<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h2 id="游戏道具操作"><a href="#游戏道具操作" aria-hidden="true" class="header-anchor">#</a> 游戏道具操作</h2> <h3 id="注册游戏开发者"><a href="#注册游戏开发者" aria-hidden="true" class="header-anchor">#</a> 注册游戏开发者</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+ 注册游戏开发者
+
+ @param block 回调结果
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>RegisterGameDeveloperWithResultCallback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="创建游戏版本"><a href="#创建游戏版本" aria-hidden="true" class="header-anchor">#</a> 创建游戏版本</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+ 创建游戏版本
+
+ @param versionName 版本名称
+ @param block 创建结果
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>CreateGameVersionWith<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>versionName Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="提议关联游戏版本"><a href="#提议关联游戏版本" aria-hidden="true" class="header-anchor">#</a> 提议关联游戏版本</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+ 提议关联游戏版本
+
+ @param gameVersion 游戏版本
+ @param owner 游戏版本创建人
+ @param block 结果回调
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>ProposeRelateGameVersionWith<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>gameVersion VersionOwner<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>owner Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="创建游戏道具"><a href="#创建游戏道具" aria-hidden="true" class="header-anchor">#</a> 创建游戏道具</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+  创建游戏道具
+
+ @param assetId 资产id
+ @param itemVer 道具版本itemVER
+ @param itemData 道具数据data
+ @param block 结果
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>CreateGameItemByAssetId<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>assetId
+                            VER<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>itemVer
+                           Data<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>itemData
+                       Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="删除游戏道具"><a href="#删除游戏道具" aria-hidden="true" class="header-anchor">#</a> 删除游戏道具</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+  删除游戏道具
+
+ @param itemID 游戏道具实例的唯一标识ID
+ @param block 结果
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>DeleteGameItemByItemID<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>itemID Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="更新游戏道具数据"><a href="#更新游戏道具数据" aria-hidden="true" class="header-anchor">#</a> 更新游戏道具数据</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+ 更新游戏道具数据
+
+ @param itemID 游戏道具实例的唯一标识ID
+ @param itemData 对道具新的描述itemData
+ @param block 更新结果
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>UpdateGameItemBy<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>itemID Data<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>itemData Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="查询道具详细信息"><a href="#查询道具详细信息" aria-hidden="true" class="header-anchor">#</a> 查询道具详细信息</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+ 查询道具详细信息
+
+ @param gameHashOrID hash或道具id
+ @param block 查询结果
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>QueryGameItemInfoBy<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>gameHashOrID Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="转移游戏道具"><a href="#转移游戏道具" aria-hidden="true" class="header-anchor">#</a> 转移游戏道具</h3> <p>/**
+转移游戏道具</p> <p>@param account 转移目标账户
+@param itemID 道具ID
+@param block 转移结果
+*/</p> <ul><li>(void)TransferGameItemToAccount:(NSString *)account ItemID:(NSString *)itemID Callback:(void(^)(NSDictionary *responseDict))block;</li></ul> <div class="language- extra-class"><pre class="language-text"><code>
+### 查询账户下所拥有的道具
+
+```objectivec
+/**
+ 查询账户下所拥有的道具
+
+ @param account 账户
+ @param block 查询结果
+ */
+- (void)QueryAccountGameItemsByAccount:(NSString *)account Callback:(void(^)(NSDictionary *responseDict))block;
+</code></pre></div><h2 id="游戏道具买卖"><a href="#游戏道具买卖" aria-hidden="true" class="header-anchor">#</a> 游戏道具买卖</h2> <h3 id="创建游戏道具出售单"><a href="#创建游戏道具出售单" aria-hidden="true" class="header-anchor">#</a> 创建游戏道具出售单</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+ 创建游戏道具出售单
+
+ @param account OTC交易平台账户otcAccount, 用于收取挂单费用
+ @param itemID 道具itemID
+ @param price 商品挂单价格price
+ @param fee 挂单费用
+ @param memo 挂单备注信息
+ @param expiration 过期时间(即挂卖时间,number类型,如3600，表示3600秒后过期)
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>CreateGameItemOrderByOTCAccount<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>account
+                                 ItemID<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>itemID
+                                  Price<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>price
+                                    Fee<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>fee
+                                   Memo<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>memo
+                             Expiration<span class="token punctuation">:</span><span class="token punctuation">(</span>NSInteger<span class="token punctuation">)</span>expiration
+                               Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+
+</code></pre></div><h3 id="取消游戏道具出售单"><a href="#取消游戏道具出售单" aria-hidden="true" class="header-anchor">#</a> 取消游戏道具出售单</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+  取消游戏道具出售单
+
+ @param orderID 订单号
+ @param block 取消结果回调
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>CancelGameItemOrderByOrderID<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>orderID Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="装填游戏道具出售单"><a href="#装填游戏道具出售单" aria-hidden="true" class="header-anchor">#</a> 装填游戏道具出售单</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+  装填游戏道具出售单
+
+ @param orderID 订单ID
+ @param seller seller
+ @param itemID 道具ID
+ @param price 支付价格
+ @param assetID 资源ID
+ @param assetSymbol assetSymbol
+ @param block 操作结果
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>FillGameItemOrderByOrder<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>orderID
+                          Seller<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>seller
+                          ItemID<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>itemID
+                           Price<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>price
+                         AssetID<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>assetID
+                    AssetSynmbol<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>assetSymbol
+                        Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h2 id="道具查询"><a href="#道具查询" aria-hidden="true" class="header-anchor">#</a> 道具查询</h2> <h3 id="查询全网游戏道具售卖订单"><a href="#查询全网游戏道具售卖订单" aria-hidden="true" class="header-anchor">#</a> 查询全网游戏道具售卖订单</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+  查询全网游戏道具售卖订单
+
+ @param symbolsOrIds assetSymbolsOrIds
+ @param versionNameOrIds versionNameOrIds
+ @param pageSize 分页大小
+ @param page 页码
+ @param block 查询结果回调
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>QueryGameItemOrdersByAssetSymbolsOrIds<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>symbolsOrIds
+                              VersionNameOrIds<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>versionNameOrIds
+                                      PageSize<span class="token punctuation">:</span><span class="token punctuation">(</span>NSInteger<span class="token punctuation">)</span>pageSize
+                                          Page<span class="token punctuation">:</span><span class="token punctuation">(</span>NSInteger<span class="token punctuation">)</span>page
+                                      Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="查询账户下游戏道具售卖订单"><a href="#查询账户下游戏道具售卖订单" aria-hidden="true" class="header-anchor">#</a> 查询账户下游戏道具售卖订单</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+  查询账户下游戏道具售卖订单
+
+ @param account  账号
+ @param pageSize 分页大小
+ @param page 页码
+ @param block 查询结果回调
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>QueryAccountGameItemOrdersByAccount<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>account PageSize<span class="token punctuation">:</span><span class="token punctuation">(</span>NSInteger<span class="token punctuation">)</span>pageSize Page<span class="token punctuation">:</span><span class="token punctuation">(</span>NSInteger<span class="token punctuation">)</span>page Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="查询游戏开发者所关联的游戏版本"><a href="#查询游戏开发者所关联的游戏版本" aria-hidden="true" class="header-anchor">#</a> 查询游戏开发者所关联的游戏版本</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+ 查询游戏开发者所关联的游戏版本
+
+ @param account 账号
+ @param block 查询结果回调
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>QueryDeveloperGameVersionsByAccount<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>account Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="查询游戏开发者所创建的道具"><a href="#查询游戏开发者所创建的道具" aria-hidden="true" class="header-anchor">#</a> 查询游戏开发者所创建的道具</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+查询游戏开发者所创建的道具
+
+ @param account 账号
+ @param block 查询结果回调
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>QueryGameItemByDeveloperByAccount<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>account Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+
+</code></pre></div><h2 id="节点投票"><a href="#节点投票" aria-hidden="true" class="header-anchor">#</a> 节点投票</h2> <h3 id="代理投票账户"><a href="#代理投票账户" aria-hidden="true" class="header-anchor">#</a> 代理投票账户</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+ 代理投票账户
+
+ @param voteIDs 节点数组 Array&lt;NSString&gt;
+ @param account 代理投票账户
+ @param block 结果
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>PublishVotesByVoteIds<span class="token punctuation">:</span><span class="token punctuation">(</span>NSArray <span class="token operator">&lt;</span>NSString <span class="token operator">*</span><span class="token operator">&gt;</span><span class="token operator">*</span><span class="token punctuation">)</span>voteIDs ProxyAccount<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>account Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="加载节点投票信息数据"><a href="#加载节点投票信息数据" aria-hidden="true" class="header-anchor">#</a> 加载节点投票信息数据</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+ 加载节点投票信息数据
+
+ @param block 数据返回
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>LoadVotesWithResult<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h2 id="其它"><a href="#其它" aria-hidden="true" class="header-anchor">#</a> 其它</h2> <h3 id="单例实例"><a href="#单例实例" aria-hidden="true" class="header-anchor">#</a> 单例实例</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+ 单例实例
+
+ @return sdk方法提供者
+ */</span>
+<span class="token operator">+</span> <span class="token punctuation">(</span>instancetype<span class="token punctuation">)</span>sharedInstance<span class="token punctuation">;</span>
+</code></pre></div><h3 id="库传参初始化"><a href="#库传参初始化" aria-hidden="true" class="header-anchor">#</a> 库传参初始化</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+ 库传参初始化
+
+ @param url api节点
+ @param name 节点名称
+ @param core_asset 链标识
+ @param faucetUrl 地址
+ @param chainId 链接
+ @param block 回调结果字典  eg:{ status: 1, data: &quot;init Success&quot; }
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>initWithUrl<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>url
+               Name<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>name
+         Core_Asset<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>core_asset
+         Faucet_url<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>faucetUrl
+            ChainId<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>chainId
+           Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="断开websoket通信"><a href="#断开websoket通信" aria-hidden="true" class="header-anchor">#</a> 断开websoket通信</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+ 断开websoket通信
+ @param block 结果
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>Disconnect<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div><h3 id="查询block-txid"><a href="#查询block-txid" aria-hidden="true" class="header-anchor">#</a> 查询block/TXID</h3> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">/**
+  查询block/TXID
+
+ @param blockOrTXID 区块ID
+ @param block 查询结果
+ */</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>QueryBlockTXID<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>blockOrTXID Callback<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span>responseDict<span class="token punctuation">)</span><span class="token punctuation">)</span>block<span class="token punctuation">;</span>
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/ios-api/" class="prev router-link-active">
+          iOS API 參考
+        </a></span> <!----></p></div> </div> <!----></div></div>
+    <script src="/assets/js/19.39481309.js" defer></script><script src="/assets/js/app.295daaac.js" defer></script>
+  </body>
+</html>
